@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:src="@drawable/home_top"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:id="@+id/txt1"
+        android:textSize="11.7sp"
+        android:layout_width="326.2dp"
+        android:layout_height="29dp"
+        android:paddingLeft="16.3dp"
+        android:text="업데이트된 문제"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_below="@+id/img1"
+        android:layout_centerInParent="true"
+        android:background="#fbe45a"
+        android:gravity="center_vertical"/>
+
+    <ListView
+        android:id="@+id/listview1"
+        android:textColor="#000"
+        android:layout_width="326.2dp"
+        android:layout_height="94.3dp"
+        android:layout_below="@id/txt1"
+        android:layout_centerInParent="true">
+    </ListView>
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="326.2dp"
+        android:layout_height="29dp"
+        android:textSize="11.7sp"
+        android:text="실시간 인기 게시물"
+        android:paddingLeft="16.3dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/listview1"
+        android:layout_centerInParent="true"
+        android:background="#fbe45a"
+        android:layout_marginTop="13.3dp"
+        android:gravity="center_vertical"/>
+
+    <ListView
+        android:id="@+id/listview2"
+        android:layout_width="326.2dp"
+        android:layout_height="94.3dp"
+        android:textColor="#000"
+        android:layout_below="@id/txt2"
+        android:layout_centerInParent="true">
+    </ListView>
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="326.2dp"
+        android:layout_height="29dp"
+        android:paddingLeft="16.3dp"
+        android:textSize="11.7sp"
+        android:layout_centerVertical="true"
+        android:text="최신 게시물"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_below="@+id/listview2"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="13.3dp"
+        android:background="#fbe45a"
+        android:gravity="center_vertical"/>
+
+    <ListView
+        android:id="@+id/listview3"
+        android:layout_width="326.2dp"
+        android:textColor="#000"
+        android:layout_height="94.3dp"
+        android:layout_below="@id/txt3"
+        android:layout_centerInParent="true">
+    </ListView>
+
+</RelativeLayout>

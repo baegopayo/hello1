@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!--탑 이미지-->
+    <LinearLayout
+        android:paddingTop="30dp"
+        android:id="@+id/mypage_top"
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        android:background="#ffc500"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="69.5dp"
+            android:layout_height="69.5dp"
+            android:background="@drawable/icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="hello_ns"
+            android:textSize="14.7sp"
+            android:textColor="#746c57"/>
+
+        <!-- 짜증나는 레이아웃-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="247dp"
+            android:layout_height="60dp"
+            android:background="#FFF"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|center_horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textColor="#746c57"
+                    android:text="LEVEL"/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="13dp"
+                    android:textColor="#ffc500"
+                    android:text="12" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textColor="#746c57"
+                    android:text="RANKING"/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="13dp"
+                    android:textColor="#ffc500"
+                    android:text="2436" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textColor="#746c57"
+                    android:text="CHEESE"/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="13dp"
+                    android:textColor="#ffc500"
+                    android:text="650" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 바텀  레이아웃 -->
+    <LinearLayout
+        android:id="@+id/mypage_bottom"
+        android:layout_width="326.3dp"
+        android:layout_height="279dp"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:layout_below="@id/mypage_top">
+
+
+        <!-- 하나의 텍스트 아이템-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="17dp">
+
+            <ImageView
+                android:layout_marginLeft="30dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/noun_heart_2070148"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="12sp"
+                android:textColor="#000"
+                android:text="스크랩" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="#d5d1d1d1"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="17dp">
+
+            <ImageView
+                android:layout_marginLeft="30dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/noun_heart_2070148"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="12sp"
+                android:textColor="#000"
+                android:text="알림" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="#d5d1d1d1"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="17dp">
+
+            <ImageView
+                android:layout_marginLeft="30dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/noun_heart_2070148"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="12sp"
+                android:textColor="#000"
+                android:text="내 게시물" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="#d5d1d1d1"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="17dp">
+
+            <ImageView
+                android:layout_marginLeft="30dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/noun_heart_2070148"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="12sp"
+                android:textColor="#000"
+                android:text="내 댓글" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="#d5d1d1d1"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
