@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="162dp"
+        android:background="@drawable/login_top"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HACKING GROUND"
+        android:textSize="15.3sp"
+        android:textColor="#e5a505"
+        android:lineSpacingExtra="3.3sp"
+        android:gravity="center_horizontal"/>
+    
+    <EditText
+        android:layout_width="326.3dp"
+        android:layout_height="41.1dp"
+        android:hint="이메일"
+        android:layout_marginTop="54.8dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="10.3sp"
+        android:lineSpacingExtra="1sp"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:background="@drawable/border_text"
+        android:paddingLeft="9.9dp"
+        android:paddingRight="9.9dp"/>
+
+    <EditText
+        android:layout_width="326.3dp"
+        android:layout_height="41.1dp"
+        android:hint="비밀번호"
+        android:layout_marginTop="7.9dp"
+        android:textSize="10.3sp"
+        android:lineSpacingExtra="1sp"
+        android:layout_gravity="center_horizontal"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:background="@drawable/border_text"
+        android:paddingLeft="9.9dp"
+        android:paddingRight="9.9dp"/>
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="326.3dp"
+        android:layout_height="48.1dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#fbe45a"
+        android:textSize="10.3sp"
+        android:textColor="#7c5d06"
+        android:lineSpacingExtra="1sp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="7.9dp"
+        android:text="로그인"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="326.3dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="36.1dp"
+        android:background="#d1d3d4"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="326.3dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:lineSpacingExtra="1sp"
+            android:text="회원가입"
+            android:textColor="#f5881c"
+            android:textSize="9.3sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:lineSpacingExtra="1sp"
+            android:text="아이디/비밀번호 찾기"
+            android:textColor="#878a8b"
+            android:textSize="9.3sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
