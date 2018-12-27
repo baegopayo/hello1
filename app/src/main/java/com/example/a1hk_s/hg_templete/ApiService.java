@@ -19,12 +19,26 @@ public interface ApiService {
     //로그인
     @FormUrlEncoded
     @POST("user/login.php")
-    Call<ResponseBody> post_login(@Field("id") String id, @Field("password") String pw);
+    Call<ResponseBody> post_login(@Field("id") String id, @Field("pw") String pw);
 
-    //닉네임 중복 체크
+    //회원가입
+    @FormUrlEncoded
+    @POST("user/regist.php")
+    Call<ResponseBody> post_regist(@Field("nick") String nick, @Field("id") String id, @Field("pw") String pw, @Field("email") String email);
+
+    //중복 체크
     @FormUrlEncoded
     @POST("user/check_overlap.php")
-    Call<ResponseBody> check_overlap_id(@Field("type") String type, @Field("nick") String nick);
+    Call<ResponseBody> check_overlap(@Field("type") String type, @Field("input") String nick);
+
+    //패스워드 확인
+    @FormUrlEncoded
+    @POST("user/check_overlap.php")
+    Call<ResponseBody> check_overlap_pw(@Field("type") String type, @Field("pw") String pw, @Field("pw_check") String pw_check);
+
+    //닉네임 가져오기
+    @POST("user/nick.php")
+    Call<ResponseBody> get_nick();
 
 }
 

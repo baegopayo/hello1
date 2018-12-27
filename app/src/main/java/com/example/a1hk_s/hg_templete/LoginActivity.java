@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
+import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,23 +38,37 @@ public class LoginActivity extends AppCompatActivity {
         input_id = (EditText) findViewById(R.id.input_id);
         input_pw = (EditText) findViewById(R.id.input_pw);
 
-        //retrofit 사용 준비
-        retrofit = new Retrofit.Builder().baseUrl(ApiService.API_URL).build();
+        OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder();
+        okHttpClient.interceptors().add(new AddCookiesInterceptor(this));
+        okHttpClient.interceptors().add(new ReceivedCookiesInterceptor(this));
+
+        retrofit = new Retrofit.Builder().baseUrl(ApiService.API_URL).client(okHttpClient.build()).build();
         apiService = retrofit.create(ApiService.class);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(LoginActivity.this, "hi",Toast.LENGTH_SHORT).show();
+                String val_id = input_id.getText().toString();
+                String val_pw = input_pw.getText().toString();
 
-                Call<ResponseBody> comment = apiService.post_login("aaa","aaa");
+                Call<ResponseBody> comment = apiService.post_login(val_id,val_pw);
                 comment.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         try{
-                            Toast.makeText(LoginActivity.this, "hi2",Toast.LENGTH_SHORT).show();
-                            Log.i("Test1", response.body().string());
+                            String res = response.body().string();
+                            Log.i("Test2", res);
+
+                            if(res.equals("fail"))
+                                Toast.makeText(LoginActivity.this, "로그인 실패!, 다시 입력해주세요.", Toast.LENGTH_SHORT).show();
+                            else{
+                                Toast.makeText(LoginActivity.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
+
+                                Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
                         } catch (IOException e){
                             Toast.makeText(LoginActivity.this, "hi3",Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
@@ -68,9 +83,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-                Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
 

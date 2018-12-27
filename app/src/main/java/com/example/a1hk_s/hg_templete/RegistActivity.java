@@ -24,11 +24,12 @@ import retrofit2.Retrofit;
 public class RegistActivity extends AppCompatActivity {
 
     Button register_btn;
-    ImageButton nick_overlap_btn;
+    ImageButton nick_overlap_btn, id_overlap_btn, email_overlap_btn, pw_overlap_btn;
 
     ApiService apiService;
     Retrofit retrofit;
     TextView input_nick;
+    TextView input_id, input_pw, input_pw_check, input_email;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,7 +40,15 @@ public class RegistActivity extends AppCompatActivity {
         register_btn = (Button) findViewById(R.id.registerBtn);
 
         input_nick = findViewById(R.id.input_nick);
+        input_id = findViewById(R.id.input_id);
+        input_email = findViewById(R.id.input_email);
+        input_pw = findViewById(R.id.input_pw);
+        input_pw_check = findViewById(R.id.input_pw_check);
+
         nick_overlap_btn = (ImageButton) findViewById(R.id.nick_overlap_btn);
+        id_overlap_btn = (ImageButton) findViewById(R.id.id_overlap_btn);
+        pw_overlap_btn = (ImageButton) findViewById(R.id.pw_overlap_btn);
+        email_overlap_btn = (ImageButton) findViewById(R.id.email_overlap_btn);
 
         //retrofit 사용 준비
         retrofit = new Retrofit.Builder().baseUrl(ApiService.API_URL).build();
@@ -48,9 +57,39 @@ public class RegistActivity extends AppCompatActivity {
         register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(RegistActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+
+                String val_nick = input_nick.getText().toString();
+                String val_id = input_id.getText().toString();
+                String val_email = input_email.getText().toString();
+                String val_pw = input_pw.getText().toString();
+
+                Call<ResponseBody> comment = apiService.post_regist(val_nick, val_id, val_pw, val_email);
+
+                comment.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        try{
+                            String res = response.body().string();
+                            if(res.equals("ok")){
+                                Toast.makeText(RegistActivity.this, "회원가입 성공!",Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(RegistActivity.this, LoginActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                            else{
+                                Toast.makeText(RegistActivity.this, res,Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (IOException e){
+                            Toast.makeText(RegistActivity.this, "Exception erro",Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(RegistActivity.this, "network fail",Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
@@ -59,7 +98,7 @@ public class RegistActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String val_nick = input_nick.getText().toString();
-                Call<ResponseBody> comment = apiService.check_overlap_id("nick",val_nick);
+                Call<ResponseBody> comment = apiService.check_overlap("nick",val_nick);
 
                 comment.enqueue(new Callback<ResponseBody>() {
                     @Override
@@ -67,16 +106,94 @@ public class RegistActivity extends AppCompatActivity {
                         try{
                             Toast.makeText(RegistActivity.this, response.body().string(),Toast.LENGTH_SHORT).show();
                         } catch (IOException e){
-                            Toast.makeText(RegistActivity.this, "hi3",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegistActivity.this, "Exception erro",Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
-                            Log.i("Test1", "fail2");
                         }
                     }
 
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(RegistActivity.this, "network fail",Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
 
-                        Toast.makeText(RegistActivity.this, "hi4",Toast.LENGTH_SHORT).show();
+        id_overlap_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String val_id = input_id.getText().toString();
+                Call<ResponseBody> comment = apiService.check_overlap("id",val_id);
+
+                comment.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        try{
+                            Toast.makeText(RegistActivity.this, response.body().string(),Toast.LENGTH_SHORT).show();
+                        } catch (IOException e){
+                            Toast.makeText(RegistActivity.this, "Exception error",Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(RegistActivity.this, "network fail",Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        email_overlap_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String val_email = input_email.getText().toString();
+                Call<ResponseBody> comment = apiService.check_overlap("email",val_email);
+
+                comment.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        try{
+                            Toast.makeText(RegistActivity.this, response.body().string(),Toast.LENGTH_SHORT).show();
+                        } catch (IOException e){
+                            Toast.makeText(RegistActivity.this, "Exception error",Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(RegistActivity.this, "network fail",Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        pw_overlap_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String val_pw = input_pw.getText().toString();
+                String val_pw_check = input_pw_check.getText().toString();
+
+                Call<ResponseBody> comment = apiService.check_overlap_pw("pw_check",val_pw, val_pw_check);
+
+                comment.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        try{
+                            Toast.makeText(RegistActivity.this, response.body().string(),Toast.LENGTH_SHORT).show();
+                        } catch (IOException e){
+                            Toast.makeText(RegistActivity.this, "Exception error",Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(RegistActivity.this, "network fail",Toast.LENGTH_SHORT).show();
                     }
                 });
             }
