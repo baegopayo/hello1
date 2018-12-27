@@ -12,7 +12,7 @@ public class frag2_wargame extends android.support.v4.app.Fragment {
         // Required empty public constructor
     }
     @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.frag2_wargame, container, false);
+        View view =  inflater.inflate(R.layout.frag2_tutorial, container, false);
 
         //ListView listview = view.findViewById(R.id.listview1);
         ImageView web_btn = view.findViewById(R.id.web_btn);

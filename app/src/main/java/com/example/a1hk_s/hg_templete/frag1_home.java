@@ -1,15 +1,20 @@
 package com.example.a1hk_s.hg_templete;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 public class frag1_home extends android.support.v4.app.Fragment {
+
+    ImageButton web_btn, facebook_btn, youtube_btn;
+
     public frag1_home() {
         // Required empty public constructor
     }
@@ -19,6 +24,10 @@ public class frag1_home extends android.support.v4.app.Fragment {
         ListView listview = view.findViewById(R.id.listview1);
         ListView listview2 = view.findViewById(R.id.listview2);
         ListView listview3 = view.findViewById(R.id.listview3);
+
+        web_btn = (ImageButton) view.findViewById(R.id.web_btn);
+        facebook_btn = (ImageButton) view.findViewById(R.id.facebook_btn);
+        youtube_btn = (ImageButton) view.findViewById(R.id.youtube_btn);
 
         frag1_listview1_LVA adapter = new frag1_listview1_LVA() ;
         listview.setAdapter(adapter);
@@ -30,17 +39,17 @@ public class frag1_home extends android.support.v4.app.Fragment {
         listview3.setAdapter(adapter3);
 
         // 아이템 추가하는 방법 (제목, 내용, 이름, 시간)
-        adapter.addItem("MISC","2018-07-03 12:30pm");
-        adapter.addItem("MISC","2018-11-12 11:30am");
-        adapter.addItem("CRYPTO","2018-11-13 10:00am");
+        adapter.addItem("MISC","12:30pm");
+        adapter.addItem("MISC","11:30am");
+        adapter.addItem("CRYPTO","10:00am");
 
-        adapter2.addItem("해킹대회 질문","2018-07-03 12:30pm");
-        adapter2.addItem("팀구합니다","2018-11-12 11:30am");
-        adapter2.addItem("개발자입니다","2018-11-13 10:00am");
+        adapter2.addItem("해킹대회 질문","12:30pm");
+        adapter2.addItem("팀구합니다","11:30am");
+        adapter2.addItem("개발자입니다","10:00am");
 
-        adapter3.addItem("안녕하세요 개발자..","2018-07-03 12:30pm");
-        adapter3.addItem("MISC 난이도 2 치즈2개..","2018-11-12 11:30am");
-        adapter3.addItem("해킹대회 질문2","2018-11-13 10:00am");
+        adapter3.addItem("안녕하세요 개발자..","12:30pm");
+        adapter3.addItem("MISC 난이도 2 치즈2개..","11:30am");
+        adapter3.addItem("해킹대회 질문2","10:00am");
 
          /*   listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -52,6 +61,17 @@ public class frag1_home extends android.support.v4.app.Fragment {
                 }
             });*/
 
+        web_btn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://www.nalsaem.com"));
+                startActivity(intent);
+            }
+
+        });
 
         return view;
     }

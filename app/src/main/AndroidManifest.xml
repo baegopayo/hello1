@@ -27,6 +27,8 @@
         <activity android:name=".tutorial_list_LVA"></activity>
         <activity android:name=".tutorial_list_LVI"></activity>
         <activity android:name=".RegistActivity"></activity>
+        <activity android:name=".community_detail"></activity>
+        <activity android:name=".tutorial_list_default"></activity>
 
     </application>
 

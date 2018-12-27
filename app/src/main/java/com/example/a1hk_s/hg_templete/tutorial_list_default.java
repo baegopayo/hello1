@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class tutorial_list extends AppCompatActivity{
+public class tutorial_list_default extends AppCompatActivity{
 
     TextView back_btn;
 

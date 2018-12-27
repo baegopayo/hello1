@@ -12,12 +12,17 @@
         android:background="#fbe45a"
         android:orientation="horizontal">
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
-            android:layout_marginLeft="10dp"
-            android:text="TUTORIAL"
+            android:layout_marginRight="15dp"
+            android:text="WARGAME >"
             android:textColor="#746c57"
             android:textSize="15sp" />
 
@@ -26,7 +31,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WARGAME"
+        android:text="TUTORIAL"
         android:textSize="38sp"
         android:textColor="#e5a505"
         android:letterSpacing="0.05"
@@ -86,8 +91,8 @@
         android:layout_width="match_parent"
         android:layout_height="102dp"
         android:gravity="center"
-        android:orientation="horizontal">
-
+        android:orientation="horizontal"
+        android:layout_marginTop="18dp">
         <ImageButton
             android:id="@+id/fornsic_btn"
             android:layout_margin="10dip"

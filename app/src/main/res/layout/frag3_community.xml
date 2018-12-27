@@ -3,23 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="47.6dp"
         android:background="#fbe45a"
         android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="24dp"
-            android:layout_height="22dp"
-            android:background="@android:color/transparent"
-            android:scaleType="fitXY"
-            android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            app:srcCompat="@drawable/community_menu" />
 
         <TextView
             android:id="@+id/textView"
@@ -28,6 +19,7 @@
             android:layout_gravity="center"
             android:lineSpacingExtra="2sp"
             android:text="커뮤니티"
+            android:layout_marginLeft="11.3dp"
             android:textColor="#7c5d06"
             android:textSize="15sp" />
 
@@ -50,16 +42,49 @@
             app:srcCompat="@drawable/community_search" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="49dp"
-        android:layout_marginLeft="11.3dp"
-        android:gravity="center_vertical"
-        android:lineSpacingExtra="4.3sp"
-        android:text="공지사항"
-        android:textColor="#000000"
-        android:textSize="15sp" />
+        android:orientation="horizontal"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/notice_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_marginLeft="11.3dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="4.3sp"
+            android:text="공지사항"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:background="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/qna_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_marginLeft="11.3dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="4.3sp"
+            android:text="질문 게시판"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:background="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/free_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_marginLeft="11.3dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="4.3sp"
+            android:text="자유 게시판"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:background="#FFFFFF"/>
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/community_list"

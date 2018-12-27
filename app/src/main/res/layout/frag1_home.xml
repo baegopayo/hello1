@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF">
 
-    <ImageView
-        android:id="@+id/img1"
+
+    <LinearLayout
+        android:id="@+id/mypage_top"
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:src="@drawable/home_top"
-        android:scaleType="fitXY"/>
+        android:layout_alignParentTop="true"
+        android:background="@drawable/home_nobtn"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="30dp">
+
+        <ImageButton
+            android:id="@+id/web_btn"
+            android:layout_width="41dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="185dp"
+            android:layout_marginTop="70dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/blog" />
+
+        <ImageButton
+            android:id="@+id/facebook_btn"
+            android:layout_width="41dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="70dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/facebook" />
+
+        <ImageButton
+            android:id="@+id/youtube_btn"
+            android:layout_width="41dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="70dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/youtube" />
+    </LinearLayout>
     <TextView
         android:id="@+id/txt1"
         android:textSize="11.7sp"
@@ -21,8 +57,8 @@
         android:textColor="#000"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:layout_below="@+id/img1"
-        android:layout_centerInParent="true"
+        android:layout_below="@id/mypage_top"
+        android:layout_marginTop="10dp"
         android:background="#fbe45a"
         android:gravity="center_vertical"/>
 

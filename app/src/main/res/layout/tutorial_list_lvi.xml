@@ -9,6 +9,7 @@
     android:layout_gravity="center_horizontal">
 
     <LinearLayout
+        android:id="@+id/img_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -17,9 +18,9 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_marginTop="28.4dp"
             android:layout_marginRight="24.6dp"
+            android:layout_marginTop="28.4dp"
+            android:gravity="right"
             android:lineSpacingExtra="2.7sp"
             android:text="HELLO
                         SQL INJECTION"
@@ -30,9 +31,9 @@
             android:id="@+id/cheese"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_marginTop="8dp"
             android:layout_marginRight="24.6dp"
+            android:layout_marginTop="8dp"
+            android:gravity="right"
             android:lineSpacingExtra="2sp"
             android:text="CHEESE : 5"
             android:textColor="#7c5d06"

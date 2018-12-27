@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants">
 
     <TextView
         android:id="@+id/title"
@@ -14,7 +15,10 @@
         android:text="안녕하세요 날샘입니다"
         android:textColor="#000000"
         android:textSize="12sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
     <TextView
         android:id="@+id/content"
@@ -24,38 +28,56 @@
         android:lineSpacingExtra="3sp"
         android:text="대규모 업데이트를 통해 여러분들이 느끼실 불편했던 사항을 아래 URL로…"
         android:textColor="#000000"
-        android:textSize="10.7sp" />
+        android:textSize="10.7sp"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="27dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false" >
 
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="300dp"
-            app:srcCompat="@drawable/community_heart" />
+            app:srcCompat="@drawable/community_heart"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
 
         <TextView
             android:id="@+id/heart"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:gravity="center"
-            android:text="3" />
+            android:text="3"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
 
         <ImageButton
             android:id="@+id/imageButton5"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            app:srcCompat="@drawable/community_comment" />
+            app:srcCompat="@drawable/community_comment"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
 
         <TextView
             android:id="@+id/comment"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:gravity="center"
-            android:text="4" />
+            android:text="4"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
     </LinearLayout>
 </LinearLayout>
