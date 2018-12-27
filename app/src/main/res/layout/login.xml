@@ -19,32 +19,34 @@
         android:textColor="#e5a505"
         android:lineSpacingExtra="3.3sp"
         android:gravity="center_horizontal"/>
-    
-    <EditText
-        android:layout_width="326.3dp"
-        android:layout_height="41.1dp"
-        android:hint="이메일"
-        android:layout_marginTop="54.8dp"
-        android:layout_gravity="center_horizontal"
-        android:textSize="10.3sp"
-        android:lineSpacingExtra="1sp"
-        android:inputType="textMultiLine|textNoSuggestions"
-        android:background="@drawable/border_text"
-        android:paddingLeft="9.9dp"
-        android:paddingRight="9.9dp"/>
 
     <EditText
+        android:id="@+id/input_id"
         android:layout_width="326.3dp"
         android:layout_height="41.1dp"
-        android:hint="비밀번호"
-        android:layout_marginTop="7.9dp"
-        android:textSize="10.3sp"
-        android:lineSpacingExtra="1sp"
         android:layout_gravity="center_horizontal"
-        android:inputType="textMultiLine|textNoSuggestions"
+        android:layout_marginTop="54.8dp"
         android:background="@drawable/border_text"
+        android:hint="아이디"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:lineSpacingExtra="1sp"
         android:paddingLeft="9.9dp"
-        android:paddingRight="9.9dp"/>
+        android:paddingRight="9.9dp"
+        android:textSize="10.3sp" />
+
+    <EditText
+        android:id="@+id/input_pw"
+        android:layout_width="326.3dp"
+        android:layout_height="41.1dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="7.9dp"
+        android:background="@drawable/border_text"
+        android:hint="비밀번호"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:lineSpacingExtra="1sp"
+        android:paddingLeft="9.9dp"
+        android:paddingRight="9.9dp"
+        android:textSize="10.3sp" />
 
     <TextView
         android:id="@+id/login"
@@ -75,6 +77,7 @@
         android:weightSum="2">
 
         <Button
+            android:id="@+id/registerBtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
