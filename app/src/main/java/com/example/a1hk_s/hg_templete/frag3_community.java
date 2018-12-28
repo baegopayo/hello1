@@ -35,8 +35,8 @@ public class frag3_community extends android.support.v4.app.Fragment {
 
         // 아이템 추가하는 방법 (제목, 내용, 좋아요 수, 댓글 수)
         adapter.addItem("안녕하세요 날샘입니다", "대규모 업데이트를 통해 여러분들이 느끼실 불편했던 사항을 아래 URL로…", 3, 4);
-        adapter.addItem("안녕하세요 날샘입니다", "대규모 업데이트를 통해 여러분들이 느끼실 불편했던 사항을 아래 URL로…", 3, 4);
-        adapter.addItem("안녕하세요 날샘입니다", "대규모 업데이트를 통해 여러분들이 느끼실 불편했던 사항을 아래 URL로…", 3, 4);
+        adapter.addItem("연말 이벤트 ~~", "댓글로 해킹그라운드 6행시를 지어주세요! ", 20, 12);
+        adapter.addItem("업데이트 공지", "2018/12/28을 기준으로 1.2버전으로 업데이트가 실시될 예정입니다.", 6, 2);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
