@@ -128,6 +128,8 @@
                 android:layout_height="20dp"
                 android:layout_marginLeft="300dp"
                 android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/community_heart" />
 
             <TextView
@@ -143,6 +145,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/community_comment" />
 
             <TextView

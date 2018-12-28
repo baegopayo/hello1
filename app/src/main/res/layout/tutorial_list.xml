@@ -29,15 +29,16 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="12.3dp"
         android:letterSpacing="0.05"
         android:lineSpacingExtra="8.7sp"
-        android:layout_gravity="center"
+        android:text="WEB"
         android:textColor="#e5a505"
-        android:textSize="38sp"
-        android:text="WEB"/>
+        android:textSize="38sp" />
 
     <ListView
         android:id="@+id/tutorial_list"

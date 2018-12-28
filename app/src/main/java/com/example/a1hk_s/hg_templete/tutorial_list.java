@@ -1,5 +1,6 @@
 package com.example.a1hk_s.hg_templete;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -18,15 +19,21 @@ public class tutorial_list extends AppCompatActivity{
 
         setContentView(R.layout.tutorial_list);
 
+        Intent intent = getIntent();
+        String sel = intent.getExtras().getString("name");
+
         ListView listview = (ListView) findViewById(R.id.tutorial_list);
         back_btn = (TextView) findViewById(R.id.back);
+        TextView title = (TextView) findViewById(R.id.title);
+
+        title.setText(sel);
 
         tutorial_list_LVA adapter = new tutorial_list_LVA();
         listview.setAdapter(adapter);
 
         // 아이템 추가하는 방법 (제목, 내용, 이름, 시간)
-        adapter.addItem("HELLO","CHEESE : 5", ContextCompat.getDrawable(this,R.drawable.tutorial_btn));
         adapter.addItem("","",ContextCompat.getDrawable(this,R.drawable.tutorial_btn_dark));
+        adapter.addItem("","", ContextCompat.getDrawable(this,R.drawable.tutorial_btn_dark));
         adapter.addItem("","", ContextCompat.getDrawable(this,R.drawable.tutorial_btn_dark));
         adapter.addItem("","", ContextCompat.getDrawable(this,R.drawable.tutorial_btn_dark));
 

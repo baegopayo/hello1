@@ -14,32 +14,25 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="292dp"
+            android:layout_width="306dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginLeft="11.3dp"
             android:lineSpacingExtra="2sp"
             android:text="커뮤니티"
-            android:layout_marginLeft="11.3dp"
             android:textColor="#7c5d06"
             android:textSize="15sp" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="23.9dp"
-            android:layout_height="23.9dp"
+            android:id="@+id/imageButton"
+            android:layout_width="40dp"
+            android:layout_height="26dp"
+            android:layout_weight="1"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/community_f5" />
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/community_top_icon" />
 
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="24dp"
-            android:layout_height="22dp"
-            android:background="@android:color/transparent"
-            android:scaleType="fitXY"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/community_search" />
     </LinearLayout>
 
     <LinearLayout

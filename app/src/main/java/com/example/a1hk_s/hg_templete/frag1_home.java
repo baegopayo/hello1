@@ -62,15 +62,30 @@ public class frag1_home extends android.support.v4.app.Fragment {
             });*/
 
         web_btn.setOnClickListener(new View.OnClickListener(){
-
             @Override
-
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("http://www.nalsaem.com"));
                 startActivity(intent);
             }
+        });
 
+        facebook_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.facebook.com/%ED%95%B4%ED%82%B9-%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-%EB%82%A0%EC%83%98-2105988482776815/?ref=bookmarks"));
+                startActivity(intent);
+            }
+        });
+
+        youtube_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.youtube.com/channel/UCce8z_iXd_yZqcPw_hdU-JQ"));
+                startActivity(intent);
+            }
         });
 
         return view;

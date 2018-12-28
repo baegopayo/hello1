@@ -41,43 +41,58 @@
         android:focusable="false"
         android:focusableInTouchMode="false" >
 
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10" />
+
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="300dp"
-            app:srcCompat="@drawable/community_heart"
+            android:layout_marginLeft="270dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
             android:clickable="false"
             android:focusable="false"
-            android:focusableInTouchMode="false" />
+            android:focusableInTouchMode="false"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/community_heart" />
 
         <TextView
             android:id="@+id/heart"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:gravity="center"
-            android:text="3"
+            android:layout_weight="1"
             android:clickable="false"
             android:focusable="false"
-            android:focusableInTouchMode="false" />
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:text="3" />
 
         <ImageButton
             android:id="@+id/imageButton5"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            app:srcCompat="@drawable/community_comment"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
             android:clickable="false"
             android:focusable="false"
-            android:focusableInTouchMode="false" />
+            android:focusableInTouchMode="false"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/community_comment" />
 
         <TextView
             android:id="@+id/comment"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:gravity="center"
-            android:text="4"
+            android:layout_weight="1"
             android:clickable="false"
             android:focusable="false"
-            android:focusableInTouchMode="false" />
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:text="4" />
+
     </LinearLayout>
 </LinearLayout>

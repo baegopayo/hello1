@@ -14,7 +14,7 @@ import retrofit2.http.Query;
 public interface ApiService {
     //API Gateway Stage URL
     //호출할 기본적인 위치랄까?
-    public static final String API_URL = "http://192.168.0.10/nalsaem/server/";
+    public static final String API_URL = "http://www.nalsaem.com/hello_apple/";
 
     //로그인
     @FormUrlEncoded
